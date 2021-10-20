@@ -6,6 +6,8 @@ class PostCommentsController < ApplicationController
     comment.user_id = current_user.id
     comment.post_image_id = post_image.id
     # ユーザーid/画像idの両方チェックが必要
+    # ER図の関連性を示す為
+    # カラムをどう紐付けているかの疑問は、ここで説明できます
     comment.save
     redirect_to post_image_path(post_image.id)
   end
